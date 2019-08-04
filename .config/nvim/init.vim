@@ -28,6 +28,8 @@ set t_Co=256
 cmap W w suda://%
 "" use escape key in terminal mode
 tnoremap <Esc> <C-\><C-n>
+"" use system clipboard
+set clipboard+=unnamedplus
 
 
 " Ranger

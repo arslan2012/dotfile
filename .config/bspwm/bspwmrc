@@ -1,12 +1,11 @@
 #! /bin/sh
 
-export XDG_CURRENT_DESKTOP="i3"
+$HOME/.config/polybar/launch.sh
 /usr/libexec/gsd-xsettings &
 xsetroot -cursor_name left_ptr
 wmname LG3D
 sxhkd &
 variety &
-$HOME/.config/polybar/launch.sh
 compton -b
 fcitx -r
 
@@ -22,3 +21,8 @@ bspc config gapless_monocle      true
 bspc rule -a Gimp desktop='^8' state=floating follow=on
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
+
+bspc rule -a latte-dock floating=on
+
+## When used without DE
+# export XDG_CURRENT_DESKTOP="i3"
