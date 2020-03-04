@@ -30,6 +30,7 @@ cmap W w suda://%
 tnoremap <Esc> <C-\><C-n>
 "" use system clipboard
 set clipboard+=unnamedplus
+set shell=bash
 
 
 " Ranger

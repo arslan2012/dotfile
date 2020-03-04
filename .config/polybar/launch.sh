@@ -2,9 +2,6 @@
 
 ## Add this to your wm startup file.
 
-# Terminate xembedsniproxy to get tray ownership
-killall -q xembedsniproxy
-
 # Terminate already running bar instances
 killall -q polybar
 

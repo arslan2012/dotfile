@@ -1,7 +1,7 @@
 #! /bin/sh
 
 $HOME/.config/polybar/launch.sh
-/usr/libexec/gsd-xsettings &
+# export XDG_CURRENT_DESKTOP="i3"
 xsetroot -cursor_name left_ptr
 wmname LG3D
 sxhkd &
@@ -18,11 +18,10 @@ bspc config split_ratio          0.52
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
 
-bspc rule -a Gimp desktop='^8' state=floating follow=on
+bspc rule -a Gimp desktop='^7' state=floating follow=on
+bspc rule -a Blender desktop='^8' follow=on
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 
 bspc rule -a latte-dock floating=on
 
-## When used without DE
-# export XDG_CURRENT_DESKTOP="i3"

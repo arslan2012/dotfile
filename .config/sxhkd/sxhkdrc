@@ -11,7 +11,7 @@ super + d
 	rofi -show combi
 
 super + shift + d
-    env SUDO_ASKPASS=/home/arslan/.config/sxhkd/ask_password.sh rofi -show combi -run-command "sudo -A {cmd}"
+    fish -c 'env SUDO_ASKPASS=/home/arslan/.config/sxhkd/ask_password.sh rofi -show combi -run-command "sudo -A {cmd}"'
 
 # make sxhkd reload its configuration files:
 super + Escape
