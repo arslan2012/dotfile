@@ -15,4 +15,9 @@ function sync
     sudo emerge --sync
     sudo layman -S
 end
+function sfs
+    set -l hostpath (string replace ":" "/" (string split "@" $argv[1])[-1])[1]
+    mkdir -p ~/sshfs/$hostpath
+    sshfs $argv[1] ~/sshfs/$hostpath
+end
 alias update='sudo emerge -auDN --keep-going --with-bdeps=y --verbose-conflicts --rebuild-if-new-slot=y @world'

@@ -6,7 +6,7 @@ xsetroot -cursor_name left_ptr
 wmname LG3D
 sxhkd &
 variety &
-compton -b
+picom -b
 fcitx -r
 
 bspc monitor -d I II III IV V VI VII VIII IX X
@@ -20,6 +20,8 @@ bspc config gapless_monocle      true
 
 bspc rule -a Gimp desktop='^7' state=floating follow=on
 bspc rule -a Blender desktop='^8' follow=on
+bspc rule -a jetbrains-idea desktop='^2'state=floating follow=on
+bspc rule -a qq desktop='^5'state=floating follow=on
 bspc rule -a Kupfer.py focus=on
 bspc rule -a Screenkey manage=off
 

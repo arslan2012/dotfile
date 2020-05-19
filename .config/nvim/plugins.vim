@@ -14,6 +14,9 @@ Plug 'ryanoasis/vim-devicons'
 Plug 'ntpeters/vim-better-whitespace'
 "" vim doesn't recognize typescript
 Plug 'HerringtonDarkholme/yats.vim'
+"" write file as root
 Plug 'lambdalisue/suda.vim'
+"" comment out stuff
+Plug 'tpope/vim-commentary'
 call plug#end()
 
