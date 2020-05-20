@@ -1,4 +1,6 @@
 #!/bin/env python3
+import warnings
+warnings.filterwarnings("ignore")
 
 from urllib.request import urlopen
 from bs4 import BeautifulSoup
