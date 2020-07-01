@@ -16,8 +16,6 @@ set shiftwidth=4
 set expandtab
 "" show number
 set number
-"" show relative number
-set relativenumber
 "" enable mouse
 set mouse=a
 "" always show statusline
@@ -32,12 +30,8 @@ tnoremap <Esc> <C-\><C-n>
 set clipboard+=unnamedplus
 set shell=bash
 
-
-" Ranger
-"" open ranger when vim open a directory
-let g:ranger_replace_netrw = 1
 "" show dotfiles
-let g:ranger_command_override = 'ranger --cmd "set show_hidden=true"'
+let g:NERDTreeShowHidden=1
 
 " statusline
 "" enable powerline fonts
@@ -53,3 +47,27 @@ let g:airline#extensions#disable_rtp_load = 1
 let g:airline#extensions#coc#enabled = 1
 let g:airline_section_error = '%{airline#util#wrap(airline#extensions#coc#get_error(),0)}'
 let g:airline_section_warning = '%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+
+
+" split at the bottom
+set splitbelow
+" auto start
+autocmd vimenter *
+            \ NERDTree |
+            \ execute "wincmd l" |
+            \ split | resize 10 | execute"term fish" | stopinsert |
+            \ execute "wincmd k"
+
+" set filetype for react
+autocmd BufNewFile,BufRead *.tsx set syntax=typescript.tsx
+
+" autosave
+let g:auto_save = 1
+
+" show quickfix list
+" Remap for do codeAction of selected region
+function! s:cocActionsOpenFromSelected(type) abort
+  execute 'CocCommand actions.open ' . a:type
+endfunction
+xmap <silent> <leader>a :<C-u>execute 'CocCommand actions.open ' . visualmode()<CR>
+nmap <silent> <leader>a :<C-u>set operatorfunc=<SID>cocActionsOpenFromSelected<CR>g@

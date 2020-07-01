@@ -2,9 +2,9 @@ bass source /etc/profile
 set -x GOROOT /usr/lib/go
 set -x GOPATH $HOME/src/go
 set -x PROXYCHAINS_SOCKS5 1081
-set -gx PATH (yarn global bin) $HOME/.local/bin $HOME/.krew/bin $GOROOT/bin $GOPATH/bin $PATH
+set -x DENO_INSTALL /home/arslan/.deno
+set -gx PATH (yarn global bin) $HOME/.local/bin $HOME/.krew/bin $GOROOT/bin ~/.kube/plugins/jordanwilson230 $GOPATH/bin $DENO_INSTALL/bin $PATH
 alias dd='sudo dd status=progress'
-alias ranger='ranger --choosedir=$HOME/.rangerdir; cd (cat $HOME/.rangerdir)'
 abbr ls lsd -ahl
 abbr rm rm -rf
 abbr vi nvim
@@ -20,4 +20,4 @@ function sfs
     mkdir -p ~/sshfs/$hostpath
     sshfs $argv[1] ~/sshfs/$hostpath
 end
-alias update='sudo emerge -auDN --keep-going --with-bdeps=y --verbose-conflicts --rebuild-if-new-slot=y @world'
+alias update='sudo emerge -auDN @world'

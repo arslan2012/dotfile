@@ -1,11 +1,6 @@
 call plug#begin('~/.vim/plugged')
-"" Dependency of ranger
-Plug 'rbgrouleff/bclose.vim'
-"" File Manager(Ranger)
-Plug 'francoiscabrol/ranger.vim'
 "" completion framework and language server client which supports extension features of VSCode.
-Plug 'neoclide/coc.nvim', {'tag': '*', 'do': './install.sh'}
-"" gotta have a statusline plugin
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 "" make statusline pretty with icons
@@ -18,5 +13,10 @@ Plug 'HerringtonDarkholme/yats.vim'
 Plug 'lambdalisue/suda.vim'
 "" comment out stuff
 Plug 'tpope/vim-commentary'
+"dir tree
+Plug 'preservim/nerdtree'
+Plug 'Xuyuanp/nerdtree-git-plugin'
+"auto save
+Plug '907th/vim-auto-save'
 call plug#end()
 
